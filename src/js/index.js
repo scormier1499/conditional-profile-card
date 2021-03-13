@@ -29,18 +29,47 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let name = variables.name;
+  let last = variables.lastname;
+  console.log(typeof name);
+  if (name === null) name = "Firstname";
+  if (last == null) last = "Lastname";
+
+  let role = variables.role;
+  console.log(typeof role);
+  if (role === null) role = "Please select your title";
+
+  let country = variables.country;
+  let city = variables.city;
+  console.log(typeof country);
+  if (country === null) country = "select country";
+  if (city == null) city = "select city";
+
+  let twitter = variables.twitter;
+  let github = variables.github;
+  let linkedin = variables.linkedin;
+  let instagram = variables.instagram;
+  if (twitter === null) twitter = "please enter twitter";
+  if (github === "alesanchezr") github = "please enter github";
+  if (linkedin === null) linkedin = "please enter linkedin";
+  if (instagram === null) instagram = "please enter instagram";
+
+  console.log(typeof twitter);
+
+  let seoPos = variables.socialMediaPosition;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${name} ${last}</h1>
+          <h2>${role}</h2>
+          <h3>${country} ${city}</h3>
+          <ul class="${seoPos}">
+            <li><a href="${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="${github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
