@@ -32,27 +32,28 @@ function render(variables = {}) {
   let name = variables.name;
   let last = variables.lastname;
   console.log(typeof name);
-  if (name === null) name = "Firstname";
+  if (name == null) name = "Firstname";
   if (last == null) last = "Lastname";
 
   let role = variables.role;
   console.log(typeof role);
-  if (role === null) role = "Please select your title";
+  if (role == null) role = "Please select your title";
 
   let country = variables.country;
   let city = variables.city;
   console.log(typeof country);
-  if (country === null) country = "select country";
+  if (country == null) country = "select country";
   if (city == null) city = "select city";
 
   let twitter = variables.twitter;
   let github = variables.github;
   let linkedin = variables.linkedin;
   let instagram = variables.instagram;
-  if (twitter === null) twitter = "please enter twitter";
-  if (github === "alesanchezr") github = "please enter github";
-  if (linkedin === null) linkedin = "please enter linkedin";
-  if (instagram === null) instagram = "please enter instagram";
+  if (twitter == null) twitter = "please enter twitter";
+  if (github == null || github === "alesanchezr")
+    github = "https://github.com/scormier1499";
+  if (linkedin == null) linkedin = "please enter linkedin";
+  if (instagram == null) instagram = "please enter instagram";
 
   console.log(typeof twitter);
 
